@@ -10,6 +10,7 @@
     "format": "prettier --write ."
   },
   "dependencies": {
+    "@radix-ui/react-avatar": "^1.0.4",
     "@react-three/drei": "^9.92.5",
     "@react-three/fiber": "^8.15.12",
     "@types/three": "^0.160.0",
