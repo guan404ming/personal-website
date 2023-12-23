@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Montserrat } from "next/font/google";
 
+import { cn } from "@/lib/utils";
+
 import "./globals.css";
 
 const inter = Montserrat({
@@ -20,7 +22,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={cn(inter.className, "h-full w-full")}>{children}</body>
     </html>
   );
 }
