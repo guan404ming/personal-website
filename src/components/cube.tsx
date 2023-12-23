@@ -5,7 +5,7 @@ import React, { useRef, useMemo } from "react";
 import { useFrame } from "@react-three/fiber";
 import { BoxGeometry, EdgesGeometry } from "three";
 
-const Cube = () => {
+function Cube() {
   const meshRef = useRef<THREE.Mesh>(null);
   const lineRef = useRef<THREE.LineSegments>(null);
 
@@ -34,6 +34,6 @@ const Cube = () => {
       </lineSegments>
     </>
   );
-};
+}
 
 export default Cube;

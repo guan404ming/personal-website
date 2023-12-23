@@ -4,6 +4,10 @@
       "files": ["*.mjs", "*.ts", "*.tsx"],
       "parserOptions": {
         "project": "tsconfig.json"
+      },
+      "rules": {
+        "react/no-unknown-property": "off",
+        "react/function-component-definition": "off"
       }
     }
   ],

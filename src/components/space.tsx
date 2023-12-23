@@ -9,7 +9,7 @@ import Cube from "@/components/cube";
 
 // Assuming Cube component is defined as in the previous snippet
 
-const Scene = () => {
+function Scene() {
   return (
     <Canvas camera={{ position: [0.15, 0, 0.15], far: 100 }}>
       <ambientLight />
@@ -20,6 +20,6 @@ const Scene = () => {
       <OrbitControls />
     </Canvas>
   );
-};
+}
 
 export default Scene;
