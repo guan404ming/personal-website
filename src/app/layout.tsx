@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Montserrat } from "next/font/google";
 
+import Header from "@/components/header";
 import Space from "@/components/space";
 import { cn } from "@/lib/utils";
 
@@ -22,8 +23,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
-      <body className={cn(inter.className, "h-full w-full")}>
+    <html lang="en" className="h-full">
+      <body className={cn(inter.className, "h-full")}>
+        <Header></Header>
         <div className="absolute z-10 h-full w-full">
           <Space></Space>
         </div>
