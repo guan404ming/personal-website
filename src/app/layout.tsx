@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Montserrat } from "next/font/google";
 
+import Cube from "@/components/cube";
 import Header from "@/components/header";
 import Space from "@/components/space";
 import { cn } from "@/lib/utils";
@@ -27,7 +28,9 @@ export default function RootLayout({
       <body className={cn(inter.className, "h-full")}>
         <Header></Header>
         <div className="absolute z-10 h-full w-full">
-          <Space></Space>
+          <Space>
+            <Cube></Cube>
+          </Space>
         </div>
         {children}
       </body>
