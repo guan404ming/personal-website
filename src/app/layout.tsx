@@ -4,6 +4,7 @@ import { Montserrat } from "next/font/google";
 import Cube from "@/components/cube";
 import Header from "@/components/header";
 import Space from "@/components/space";
+import { ThemeProvider } from "@/components/theme-provider";
 import { cn } from "@/lib/utils";
 
 import "./globals.css";
@@ -26,13 +27,18 @@ export default function RootLayout({
   return (
     <html lang="en" className="h-full">
       <body className={cn(inter.className, "h-full")}>
-        <Header></Header>
-        <div className="absolute z-10 h-full w-full">
-          <Space>
-            <Cube></Cube>
-          </Space>
-        </div>
-        {children}
+        <ThemeProvider
+          attribute="class"
+          disableTransitionOnChange
+        >
+          <Header></Header>
+          <div className="absolute z-10 h-full w-full">
+            <Space>
+              <Cube></Cube>
+            </Space>
+          </div>
+          {children}
+        </ThemeProvider>
       </body>
     </html>
   );
