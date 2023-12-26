@@ -6,8 +6,16 @@ import { OrbitControls } from "@react-three/drei";
 import { Canvas } from "@react-three/fiber";
 
 function Space({ children }: { children: React.ReactNode }) {
+  let cameraPosition = 0.15;
+
+  if (typeof window !== "undefined") {
+    cameraPosition = window.screen.width < 768 ? 0.25 : 0.15;
+  }
+
   return (
-    <Canvas camera={{ position: [0.15, 0, 0.15], far: 100 }}>
+    <Canvas
+      camera={{ position: [cameraPosition, 0, cameraPosition], far: 100 }}
+    >
       <ambientLight />
       <pointLight position={[10, 10, 10]} />
       {children}
