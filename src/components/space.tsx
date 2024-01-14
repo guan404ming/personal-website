@@ -19,8 +19,8 @@ function Space({ children }: { children: React.ReactNode }) {
       <ambientLight />
       <pointLight position={[10, 10, 10]} />
       {children}
-      <gridHelper args={[100, 100]} position={[0, 1, 0]} /> {/* Upper grid */}
-      <gridHelper args={[100, 100]} position={[0, -1, 0]} /> {/* Lower grid */}
+      <gridHelper args={[100, 100]} position={[0, 1, 0]} />
+      <gridHelper args={[100, 100]} position={[0, -1, 0]} />
       <OrbitControls />
     </Canvas>
   );
