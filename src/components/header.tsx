@@ -2,12 +2,15 @@
 
 import React, { useState } from "react";
 
+import { useRouter } from "next/navigation";
+
 import { MoonIcon, SunIcon } from "lucide-react";
 
 import { Avatar, AvatarFallback, AvatarImage } from "./ui/avatar";
 
 const Header = () => {
   const [isNightMode, setIsNightMode] = useState(false);
+  const router = useRouter();
 
   const toggleNightMode = () => {
     setIsNightMode(!isNightMode);
@@ -20,18 +23,24 @@ const Header = () => {
       }
     >
       <div className="flex items-center">
-        <Avatar className="h-12 w-12">
+        <Avatar className="h-12 w-12" onClick={() => router.push("/")}>
           <AvatarImage src="avatartion.png" alt="@guan-ming" />
           <AvatarFallback>GM</AvatarFallback>
         </Avatar>
       </div>
       <nav className="flex items-center space-x-4">
-        <a href="/about" className="text-gray-500 hover:text-gray-700">
+        <div
+          className="text-gray-500 hover:text-gray-700"
+          onClick={() => router.push("/about")}
+        >
           About
-        </a>
-        <a href="/projects" className="text-gray-500 hover:text-gray-700">
+        </div>
+        <div
+          className="text-gray-500 hover:text-gray-700"
+          onClick={() => router.push("/projects")}
+        >
           Projects
-        </a>
+        </div>
       </nav>
       <div className="flex items-center">
         <button
