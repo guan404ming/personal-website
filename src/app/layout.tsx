@@ -25,16 +25,13 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className="h-full">
+    <html lang="en" className="h-full" suppressHydrationWarning>
       <body className={cn(inter.className, "h-full")}>
-        <ThemeProvider
-          attribute="class"
-          disableTransitionOnChange
-        >
-          <Header></Header>
+        <ThemeProvider attribute="class" disableTransitionOnChange>
+          <Header />
           <div className="absolute z-10 h-full w-full">
             <Space>
-              <Cube></Cube>
+              <Cube />
             </Space>
           </div>
           {children}
