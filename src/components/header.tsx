@@ -1,7 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
-
+import { useTheme } from "next-themes";
 import { useRouter } from "next/navigation";
 
 import { MoonIcon, SunIcon } from "lucide-react";
@@ -9,11 +8,11 @@ import { MoonIcon, SunIcon } from "lucide-react";
 import { Avatar, AvatarFallback, AvatarImage } from "./ui/avatar";
 
 const Header = () => {
-  const [isNightMode, setIsNightMode] = useState(false);
+  const { theme, setTheme } = useTheme();
   const router = useRouter();
 
   const toggleNightMode = () => {
-    setIsNightMode(!isNightMode);
+    setTheme(theme === "dark" ? "light" : "dark");
   };
 
   return (
@@ -23,7 +22,7 @@ const Header = () => {
       }
     >
       <div className="flex items-center">
-        <Avatar className="h-12 w-12" onClick={() => router.push("/")}>
+        <Avatar className="h-12 w-12 border-2" onClick={() => router.push("/")}>
           <AvatarImage src="avatartion.png" alt="@guan-ming" />
           <AvatarFallback>GM</AvatarFallback>
         </Avatar>
@@ -47,7 +46,7 @@ const Header = () => {
           onClick={toggleNightMode}
           className="text-gray-500 hover:text-gray-700"
         >
-          {isNightMode ? <SunIcon size={20} /> : <MoonIcon size={20} />}
+          {theme !== "dark" ? <SunIcon size={20} /> : <MoonIcon size={20} />}
         </button>
       </div>
     </header>

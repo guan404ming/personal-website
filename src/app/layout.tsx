@@ -26,10 +26,12 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className="h-full" suppressHydrationWarning>
-      <body className={cn(inter.className, "h-full")}>
+      <body
+        className={cn(inter.className, "h-full text-black dark:text-white")}
+      >
         <ThemeProvider attribute="class" disableTransitionOnChange>
           <Header />
-          <div className="absolute z-10 h-full w-full">
+          <div className="absolute z-10 h-full w-full bg-white dark:bg-black">
             <Space>
               <Cube />
             </Space>
