@@ -2,12 +2,15 @@
 
 import React, { useRef, useMemo } from "react";
 
+import { useTheme } from "next-themes";
+
 import { useFrame } from "@react-three/fiber";
 import { BoxGeometry, EdgesGeometry } from "three";
 
 function Cube() {
   const meshRef = useRef<THREE.Mesh>(null);
   const lineRef = useRef<THREE.LineSegments>(null);
+  const { theme } = useTheme();
 
   // Create the geometry for the cube
   const boxGeometry = useMemo(() => new BoxGeometry(0.1, 0.1, 0.1), []);
@@ -27,10 +30,13 @@ function Cube() {
   return (
     <>
       <mesh ref={meshRef} geometry={boxGeometry}>
-        <meshStandardMaterial color="black" />
+        <meshStandardMaterial color={theme === "dark" ? `black` : "white"} />
       </mesh>
       <lineSegments ref={lineRef} geometry={new EdgesGeometry(boxGeometry)}>
-        <lineBasicMaterial attach="material" color="white" />
+        <lineBasicMaterial
+          attach="material"
+          color={theme !== "dark" ? "black" : "white"}
+        />
       </lineSegments>
     </>
   );
