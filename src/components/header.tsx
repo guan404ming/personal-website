@@ -30,20 +30,23 @@ const Header = () => {
       }
     >
       <div className="flex items-center">
-        <Avatar className="h-12 w-12 border-2" onClick={() => router.push("/")}>
+        <Avatar
+          className="h-12 w-12 cursor-pointer border-2"
+          onClick={() => router.push("/")}
+        >
           <AvatarImage src="avatartion.png" alt="@guan-ming" />
           <AvatarFallback>GM</AvatarFallback>
         </Avatar>
       </div>
       <nav className="flex items-center space-x-4">
         <div
-          className="text-gray-500 hover:text-gray-700"
+          className="cursor-pointer text-gray-500 hover:text-gray-700"
           onClick={() => router.push("/about")}
         >
           About
         </div>
         <div
-          className="text-gray-500 hover:text-gray-700"
+          className="cursor-pointer text-gray-500 hover:text-gray-700"
           onClick={() => router.push("/projects")}
         >
           Projects
@@ -52,7 +55,7 @@ const Header = () => {
       <div className="flex items-center">
         <button
           onClick={toggleNightMode}
-          className="text-gray-500 hover:text-gray-700"
+          className="cursor-pointer text-gray-500 hover:text-gray-700"
         >
           {icon}
         </button>
