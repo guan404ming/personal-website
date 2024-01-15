@@ -19,7 +19,7 @@ const Header = () => {
   const router = useRouter();
 
   useEffect(() => {
-    setIcon(theme !== "dark" ? <SunIcon size={20} /> : <MoonIcon size={20} />);
+    setIcon(theme !== "dark" ? <SunIcon size={25} /> : <MoonIcon size={25} />);
   }, [theme]);
 
   const toggleNightMode = () => {
@@ -29,8 +29,10 @@ const Header = () => {
   return (
     <header
       className={cn(
-        "absolute z-50 flex w-full items-center justify-between bg-white px-16 py-8 max-md:px-8 max-md:py-4 dark:bg-black",
-        pathname === "/" ? "bg-opacity-0" : "bg-opacity-100",
+        "absolute z-50 flex w-full items-center justify-between px-16 py-8 max-md:px-8 max-md:py-4",
+        pathname === "/"
+          ? "bg-opacity-0"
+          : "bg-white bg-opacity-100 dark:bg-black",
       )}
     >
       <div className="flex items-center">
@@ -42,25 +44,24 @@ const Header = () => {
           <AvatarFallback>GM</AvatarFallback>
         </Avatar>
       </div>
-      <nav className="flex items-center space-x-4">
-        <div
-          className="cursor-pointer text-gray-500 hover:text-gray-700"
+      <nav className="flex items-center space-x-4 text-lg">
+        <a
+          className="group cursor-pointer transition duration-300"
           onClick={() => router.push("/about")}
         >
           About
-        </div>
-        <div
-          className="cursor-pointer text-gray-500 hover:text-gray-700"
+          <span className="block h-0.5 max-w-0 bg-black transition-all duration-300 group-hover:max-w-full dark:bg-white"></span>
+        </a>
+        <a
+          className="group cursor-pointer transition duration-300"
           onClick={() => router.push("/projects")}
         >
           Projects
-        </div>
+          <span className="block h-0.5 max-w-0 bg-black transition-all duration-300 group-hover:max-w-full dark:bg-white"></span>
+        </a>
       </nav>
-      <div className="flex items-center">
-        <button
-          onClick={toggleNightMode}
-          className="cursor-pointer text-gray-500 hover:text-gray-700"
-        >
+      <div className="flex items-center hover:animate-wiggle">
+        <button onClick={toggleNightMode} className="cursor-pointer">
           {icon}
         </button>
       </div>
