@@ -2,35 +2,34 @@ import DataCard from "@/components/data-card";
 
 export default function AboutPage() {
   return (
-    <main className="lg:px-50 xl:px-50 flex h-screen w-screen overflow-scroll px-16 pt-24 md:px-40 ">
-      <div className="z-20 flex w-screen items-center justify-between p-4 px-10">
+    <main className="flex h-full w-screen overflow-scroll bg-white px-10 pt-24 md:px-20 lg:px-32 xl:px-40 dark:bg-black">
+      <div className="z-20 flex w-screen items-center justify-between max-md:mx-auto max-md:block">
         <div>
-          <span className="flex space-x-3">
-            <h2 className="mb-6 scroll-m-20 text-5xl font-semibold tracking-tight transition-colors first:mt-0">
+          <span className="flex space-x-3 truncate text-3xl lg:text-5xl">
+            <h2 className="mb-4 font-bold tracking-tight transition-colors lg:mb-6">
               Hi I'm Wesley
             </h2>
-            <div className="animate-wiggle text-5xl">👋</div>
+            <div className="animate-wiggle">👋</div>
           </span>
 
-          <div className="flex flex-col space-y-3 text-2xl text-gray-700 dark:text-gray-200">
-            <p>A Taiwanese 🇹🇼 developer based in Taipei.</p>
+          <div className="text-md flex flex-col space-y-1 text-gray-700 md:text-lg lg:space-y-3 lg:text-xl xl:text-2xl dark:text-gray-200">
+            <p>A Taiwanese 🇹🇼 developer.</p>
             <p>
-              I am experienced in{" "}
-              <span className="font-bold dark:text-white">
-                Full Stack Development
+              I'm experienced in{" "}
+              <span className="font-semibold dark:text-white">
+                full-stack dev
               </span>
               .
             </p>
             <p>
               Recently, I've been working on{" "}
-              <span className="font-bold dark:text-white"> TypeScript</span> and{" "}
-              <span className="font-bold dark:text-white">Python</span>.
+              <span className="font-semibold dark:text-white">TypeScript</span>.
             </p>
           </div>
         </div>
 
-        <div>
-          <h2 className="mb-3 scroll-m-20 text-3xl font-semibold tracking-tight transition-colors">
+        <div className="max-md:py-4">
+          <h2 className="mb-3 scroll-m-20 text-xl font-bold tracking-tight transition-colors xl:text-3xl">
             Education
           </h2>
           <DataCard
@@ -39,7 +38,7 @@ export default function AboutPage() {
             subtitle={"B.S.E in Information Management"}
             period={"Sep. 2018 - Jan. 2022"}
           />
-          <h2 className="my-3 scroll-m-20 text-3xl font-semibold tracking-tight transition-colors first:mt-0">
+          <h2 className="my-3 scroll-m-20 text-xl font-bold tracking-tight transition-colors xl:text-3xl">
             Experience
           </h2>
           <DataCard

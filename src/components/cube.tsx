@@ -35,7 +35,7 @@ function Cube() {
       <lineSegments ref={lineRef} geometry={new EdgesGeometry(boxGeometry)}>
         <lineBasicMaterial
           attach="material"
-          color={theme !== "dark" ? "black" : "white"}
+          color={theme !== "dark" ? "gray" : "white"}
         />
       </lineSegments>
     </>

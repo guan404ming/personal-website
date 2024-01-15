@@ -3,14 +3,17 @@
 import { useEffect, useState } from "react";
 
 import { useTheme } from "next-themes";
-import { useRouter } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 
 import { MoonIcon, SunIcon } from "lucide-react";
+
+import { cn } from "@/lib/utils";
 
 import { Avatar, AvatarFallback, AvatarImage } from "./ui/avatar";
 
 const Header = () => {
   const { theme, setTheme } = useTheme();
+  const pathname = usePathname();
   const [icon, setIcon] = useState(<MoonIcon size={20} />);
 
   const router = useRouter();
@@ -25,9 +28,10 @@ const Header = () => {
 
   return (
     <header
-      className={
-        "absolute z-20 flex w-full items-center justify-between px-16 py-8 max-sm:p-6"
-      }
+      className={cn(
+        "absolute z-50 flex w-full items-center justify-between bg-white px-16 py-8 max-md:px-8 max-md:py-4 dark:bg-black",
+        pathname === "/" ? "bg-opacity-0" : "bg-opacity-100",
+      )}
     >
       <div className="flex items-center">
         <Avatar

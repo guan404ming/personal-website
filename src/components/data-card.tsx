@@ -19,8 +19,12 @@ const DataCard = ({ title, subtitle, period, picUrl }: DataCardProps) => {
         <AvatarFallback className="bg-black text-white dark:bg-white dark:text-black">{`${title[0]}`}</AvatarFallback>
       </Avatar>
       <div>
-        <p className="flex items-center text-lg font-semibold">{title}</p>
-        <p className="text-md text-gray-700 dark:text-gray-300">{subtitle}</p>
+        <p className="text-md flex items-center font-semibold xl:text-lg">
+          {title}
+        </p>
+        <p className="xl:text-md text-sm text-gray-700 dark:text-gray-300">
+          {subtitle}
+        </p>
         <Badge
           variant="outline"
           className="-ml-1 mt-1 border-gray-600 font-normal dark:bg-slate-900 dark:text-white"

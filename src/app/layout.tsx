@@ -9,9 +9,9 @@ import { cn } from "@/lib/utils";
 
 import "./globals.css";
 
-const inter = Montserrat({
+const montserrat = Montserrat({
   subsets: ["latin"],
-  weight: ["400", "700"],
+  weight: ["400", "600", "700"],
 });
 
 export const metadata: Metadata = {
@@ -27,7 +27,10 @@ export default function RootLayout({
   return (
     <html lang="en" className="h-full" suppressHydrationWarning>
       <body
-        className={cn(inter.className, "h-full text-black dark:text-white")}
+        className={cn(
+          montserrat.className,
+          "h-full text-black dark:text-white",
+        )}
       >
         <ThemeProvider attribute="class" disableTransitionOnChange>
           <Header />
